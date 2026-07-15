@@ -113,6 +113,7 @@ function RegisterUndergraduate() {
               onChange={(event)=> {
                   setEmail(event.target.value);
                 }}
+                required
               className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
           </div>
@@ -185,6 +186,7 @@ function RegisterUndergraduate() {
                 onChange={(event)=> {
                   setPassword(event.target.value);
                 }}
+                required
                 className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
@@ -209,7 +211,7 @@ function RegisterUndergraduate() {
 
           <label className="flex items-center gap-3 text-sm">
 
-            <input type="checkbox" />
+            <input type="checkbox" required />
 
             I agree to the Terms & Conditions.
 
