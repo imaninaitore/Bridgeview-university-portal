@@ -1,5 +1,6 @@
 import React from 'react'
 import { GraduationCap ,StethoscopeIcon,Book } from 'lucide-react'
+import { Link } from 'react-router'
 
 function StudyLevel() {
   return (
@@ -39,9 +40,11 @@ function StudyLevel() {
           programmes across a wide range of disciplines.
         </p>
 
+      <Link to="/register-undergraduate">
         <button className="mt-8 bg-slate-900 text-white px-6 py-3 rounded-xl hover:bg-slate-800 transition">
           Apply →
-        </button>
+        </button>  
+        </Link>
 
       </div>
 
