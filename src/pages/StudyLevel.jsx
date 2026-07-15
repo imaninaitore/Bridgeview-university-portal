@@ -65,9 +65,11 @@ function StudyLevel() {
           diploma programmes.
         </p>
 
+        <Link to={'/register-postgraduate'}>
         <button className="mt-8 bg-slate-900 text-white px-6 py-3 rounded-xl hover:bg-slate-800 transition">
           Apply →
         </button>
+        </Link>
 
       </div>
 
@@ -88,9 +90,11 @@ function StudyLevel() {
           programmes and contribute to future discoveries.
         </p>
 
+       <Link to={'/register-doctrate'}>
         <button className="mt-8 bg-slate-900 text-white px-6 py-3 rounded-xl hover:bg-slate-800 transition">
           Apply →
         </button>
+       </Link>
 
       </div>
 
