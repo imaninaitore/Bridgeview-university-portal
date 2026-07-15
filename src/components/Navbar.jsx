@@ -113,11 +113,8 @@ const Navbar = () => {
               </Link>
             </div>
 
-           {userLoggedIn
-          ?
-        <button onClick={() => {doSignOut().then(() => {navigate('/login') }) }}>log out</button>
-          :
-         } 
+         <button onClick={() => {doSignOut().then(() => {navigate('/login') }) }}>log out</button>
+         
         </div>
 
         </div>
