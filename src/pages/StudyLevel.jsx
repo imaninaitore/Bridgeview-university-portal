@@ -1,4 +1,5 @@
 import React from 'react'
+import { GraduationCap ,StethoscopeIcon,Book } from 'lucide-react'
 
 function StudyLevel() {
   return (
@@ -26,7 +27,7 @@ function StudyLevel() {
       <div className="backdrop-blur-xl bg-white/25 border border-white/40 rounded-3xl shadow-xl p-8 hover:-translate-y-2 hover:bg-white/35 transition-all duration-300">
 
         <div className="w-16 h-16 rounded-full bg-slate-900 text-white flex items-center justify-center text-3xl mb-6">
-          🎓
+          <GraduationCap/>
         </div>
 
         <h2 className="text-2xl font-semibold text-slate-900">
@@ -49,7 +50,7 @@ function StudyLevel() {
       <div className="backdrop-blur-xl bg-white/25 border border-white/40 rounded-3xl shadow-xl p-8 hover:-translate-y-2 hover:bg-white/35 transition-all duration-300">
 
         <div className="w-16 h-16 rounded-full bg-slate-900 text-white flex items-center justify-center text-3xl mb-6">
-          📘
+          <Book />
         </div>
 
         <h2 className="text-2xl font-semibold text-slate-900">
@@ -72,7 +73,7 @@ function StudyLevel() {
       <div className="backdrop-blur-xl bg-white/25 border border-white/40 rounded-3xl shadow-xl p-8 hover:-translate-y-2 hover:bg-white/35 transition-all duration-300">
 
         <div className="w-16 h-16 rounded-full bg-slate-900 text-white flex items-center justify-center text-3xl mb-6">
-          🔬
+          <StethoscopeIcon />
         </div>
 
         <h2 className="text-2xl font-semibold text-slate-900">
