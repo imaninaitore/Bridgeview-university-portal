@@ -13,7 +13,7 @@ function App() {
   return (
     <>
     <Routes>
-       <Route path="/" element={
+       <Route path="/home" element={
           <>
             <Navbar />
             <Header />
