@@ -1,9 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router";
+import { doSignInWithEmailAndPassword,doSignInWithGoogle } from "@/firebase/auth";
+import { useAuth } from "@/context/AuthContext";
+import { useState } from "react";
 
-function Login() {
+const Login = () => {
+  const { userLoggedIn } = useAuth('')
+  const [email,setEmail] = useState('')
+  const [isSigningIn, setIsSigningIn] = useState(false)
+  const [errorMessage,setErrorMessage] = useState('')
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    if(!isSigningIn ){
+      setIsSigningIn(true)
+      await doSignInWithEmailAndPassword(email, password)
+    }
+  }
+  const onGoogleSign =(e) => {
+    e.preventDefault()
+    if(!isSigningIn){
+      setIsSigningIn(true)
+      doSignInWithGoogle().catch(err => {
+        setIsSigningIn(false)
+      })
+    }
+  }
+
   return (
     <div className="min-h-screen bg-slate-100 flex items-center justify-center px-6 py-12">
-
+     {userLoggedIn && (<Navigate to={'/home'} replace={true}/>)}
       <div className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-10">
 
         {/* Heading */}
@@ -40,6 +65,9 @@ function Login() {
             <input
               type="email"
               placeholder="Enter your email"
+              onChange={(event)=> {
+                  setLoginEmail(event.target.value);
+                }}
               className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
 
@@ -56,6 +84,9 @@ function Login() {
             <input
               type="password"
               placeholder="Enter your password"
+              onChange={(event)=> {
+                  setLoginPassword(event.target.value);
+                }}
               className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
 

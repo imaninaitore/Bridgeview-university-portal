@@ -1,8 +1,29 @@
 import React from 'react'
-import { Link } from 'react-router';
+import { Link,useNavigate,Navigate } from 'react-router';
+import { useAuth } from '@/context/AuthContext';
+import { doCreateUserWithEmailAndPassword, doSignInUserWithEmailAndPassword } from '@/firebase/auth';
 
-function RegisterUndergraduate() {
+
+const RegisterUndergraduate = () => {
+
+  const navigate = useNavigate()
+
+  const[email,setEmail] = useState('')
+  const[password,setPassword] = useState('')
+  const[confirmPassword,setConfirmPassword] = useState('')
+  const[isRegistering,setIsRegistering] = useState(false)
+  const[errorMessage,setErrorMessage] = useState('')
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    if(!isRegistering){
+      setIsRegistering(true)
+      await doSignInUserWithEmailAndPassword(email,password)
+    }
+  }
+
   return (
+    {userLoggedIn && (<Navigate to={'/home'} replace{true}/>)}
        <div className="min-h-screen bg-slate-100 flex items-center justify-center px-6 py-12">
 
       <div className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-10">
@@ -70,6 +91,9 @@ function RegisterUndergraduate() {
             <input
               type="email"
               placeholder="example@email.com"
+              onChange={(event)=> {
+                  setRegisterEmail(event.target.value);
+                }}
               className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
           </div>
@@ -138,6 +162,9 @@ function RegisterUndergraduate() {
 
               <input
                 type="password"
+                onChange={(event)=> {
+                  setRegisterPassword(event.target.value);
+                }}
                 className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
@@ -167,10 +194,10 @@ function RegisterUndergraduate() {
 
           {/* Button */}
 
-          <button className="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl transition">
-
+          <button 
+          onClick={register}
+          className="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl transition">
             Create Applicant Account
-
           </button>
 
         </form>

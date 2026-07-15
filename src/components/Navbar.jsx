@@ -1,8 +1,13 @@
 import React from "react";
 import logo from "@/assets/shield-logo.png"
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { doSignOut } from "@/firebase/auth";
+import { useAuth } from "@/context/AuthContext";
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const {userLoggedIn} = useAuth()
+
   return (
      
       <nav className="bg-white shadow-sm">
@@ -108,7 +113,12 @@ const Navbar = () => {
               </Link>
             </div>
 
-          </div>
+           {userLoggedIn
+          ?
+        <button onClick={() => {doSignOut().then(() => {navigate('/login') }) }}>log out</button>
+          :
+         } 
+        </div>
 
         </div>
 

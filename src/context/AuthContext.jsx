@@ -34,6 +34,10 @@ async function initializeUser(user){
     setLoading(false);
 }
 
+async function register(email, password) {
+  return createUserWithEmailAndPassword(auth, email, password);
+}
+
 const value = {
     currentUser,
     userLoggedIn,

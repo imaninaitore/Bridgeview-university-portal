@@ -5,6 +5,7 @@ import StudyLevel from './pages/StudyLevel'
 import RegisterUndergraduate from './pages/RegisterUndergraduate'
 import RegisterPostgraduate from './pages/RegisterPostgraduate'
 import RegisterDoctrate from './pages/RegisterDoctrate'
+import Login from './pages/Login'
 import { Route,Routes } from 'react-router'
 import MainLayout from './layout/MainLayout'
 
@@ -24,6 +25,7 @@ function App() {
        <Route path="/register-undergraduate" element={<RegisterUndergraduate/>} /> 
        <Route path="/register-postgraduate" element={<RegisterPostgraduate/>} /> 
        <Route path="/register-doctrate" element={<RegisterDoctrate/>} /> 
+       <Route path="/login" element={<Login/>} /> 
         </Route>
 
 
