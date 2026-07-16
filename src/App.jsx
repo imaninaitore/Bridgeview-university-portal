@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import About from './components/About'
+import Faculties from './components/Facaulties'
 import Footer from './components/Footer'
 import StudyLevel from './pages/StudyLevel'
 import RegisterUndergraduate from './pages/RegisterUndergraduate'
@@ -21,6 +22,7 @@ function App() {
             <Navbar />
             <Header />
             <About />
+            <Faculties/>
             <Footer />
           </>
         }/>
