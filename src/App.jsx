@@ -1,11 +1,14 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
+import About from './components/About'
+import Footer from './components/Footer'
 import StudyLevel from './pages/StudyLevel'
 import RegisterUndergraduate from './pages/RegisterUndergraduate'
 import RegisterPostgraduate from './pages/RegisterPostgraduate'
 import RegisterDoctrate from './pages/RegisterDoctrate'
 import Login from './pages/Login'
+
 import { Route,Routes } from 'react-router'
 import MainLayout from './layout/MainLayout'
 
@@ -17,6 +20,8 @@ function App() {
           <>
             <Navbar />
             <Header />
+            <About />
+            <Footer />
           </>
         }/>
 
