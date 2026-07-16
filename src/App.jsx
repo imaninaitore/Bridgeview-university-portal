@@ -9,11 +9,13 @@ import RegisterUndergraduate from './pages/RegisterUndergraduate'
 import RegisterPostgraduate from './pages/RegisterPostgraduate'
 import RegisterDoctrate from './pages/RegisterDoctrate'
 import Login from './pages/Login'
-
+import { useAuth } from "@/context/AuthContext";
+import { Navigate } from 'react-router'
 import { Route,Routes } from 'react-router'
 import MainLayout from './layout/MainLayout'
 
 function App() {
+  const {isAdmin} = useAuth();
   return (
     <>
     <Routes>
@@ -35,7 +37,14 @@ function App() {
        <Route path="/login" element={<Login/>} /> 
         </Route>
 
-
+       <Route
+    path="/admin"
+    element={
+        isAdmin
+            ? <AdminDashboard />
+            : <Navigate to="/" replace />
+    }
+    />
     </Routes>
     </>
 
