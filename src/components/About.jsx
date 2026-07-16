@@ -1,5 +1,5 @@
 import React from "react";
-import campus from "@/assets/campus.jpg";
+import campus from "@/assets/campus1.jpg";
 
 function About() {
   return (
