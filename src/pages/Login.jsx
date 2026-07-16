@@ -2,36 +2,39 @@ import { Link, Navigate } from "react-router";
 //import { doSignInWithEmailAndPassword,doSignInWithGoogle } from "@/firebase/auth";
 import { useAuth } from "@/context/AuthContext";
 import { useState } from "react";
-const {userLoggedIn,login} = useAuth('');
-const Login = () => {
-  const { userLoggedIn } = useAuth('')
+
+
+function Login () {
+  const { userLoggedIn, login } = useAuth();
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
   const [isSigningIn, setIsSigningIn] = useState(false)
   const [errorMessage,setErrorMessage] = useState('')
 
   const onSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if(!isSigningIn ) return;
       setIsSigningIn(true);
+      setErrorMessage("");
 
     try {
         await login(email, password);
     } catch (error) {
-        setErrorMessage(error.message);
-        setIsSigningIn(false);
+        setErrorMessage(error.message); 
+    }finally{
+      setIsSigningIn(false);
     }
     
-  }
-  const onGoogleSign =(e) => {
-    e.preventDefault()
-    if(!isSigningIn){
-      setIsSigningIn(true)
-      doSignInWithGoogle().catch(err => {
-        setIsSigningIn(false)
-      })
-    }
-  }
+  };
+  // const onGoogleSign =(e) => {
+  //   e.preventDefault()
+  //   if(!isSigningIn){
+  //     setIsSigningIn(true)
+  //     doSignInWithGoogle().catch(err => {
+  //       setIsSigningIn(false)
+  //     })
+  //   }
+  // }
 
   return (
     <div className="min-h-screen bg-slate-100 flex items-center justify-center px-6 py-12">
@@ -130,7 +133,6 @@ const Login = () => {
            type="submit" 
            className="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl transition duration-300 font-medium">
            {isSigningIn ? "Signing In..." : "Sign In"}
-            Sign In
 
           </button>
 
