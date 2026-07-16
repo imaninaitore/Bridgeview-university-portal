@@ -13,7 +13,7 @@ function Login () {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if(!isSigningIn ) return;
+    if(isSigningIn ) return;
       setIsSigningIn(true);
       setErrorMessage("");
 
@@ -38,7 +38,7 @@ function Login () {
 
   return (
     <div className="min-h-screen bg-slate-100 flex items-center justify-center px-6 py-12">
-     {userLoggedIn && (<Navigate to={'/home'} replace={true}/>)}
+     {userLoggedIn && (<Navigate to={'/'} replace={true}/>)}
       <div className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-10">
 
         {/* Heading */}
@@ -133,7 +133,6 @@ function Login () {
            type="submit" 
            className="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl transition duration-300 font-medium">
            {isSigningIn ? "Signing In..." : "Sign In"}
-
           </button>
 
         </form>
