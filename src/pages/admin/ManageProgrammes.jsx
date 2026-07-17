@@ -236,13 +236,19 @@ const handleSubmit = async (e) => {
 
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
 
-          <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl p-8">
+          <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl ">
 
             <h2 className="text-2xl font-bold mb-6">
 
               Add Programme
 
             </h2>
+
+            <button
+              onClick={() => setShowModal(false)}
+              className="mt-6 bg-gray-200 px-5 py-2 rounded-lg">
+              Close
+            </button>
 {/* the form */}
   <div className="w-full">
 
@@ -371,18 +377,10 @@ const handleSubmit = async (e) => {
     </form>
 
   </div>
-</div>
-            <button
-              onClick={() => setShowModal(false)}
-              className="mt-6 bg-gray-200 px-5 py-2 rounded-lg"
-            >
 
-              Close
-
-            </button>
 
           </div>
-
+</div>
       )}
 
     </AdminLayout>

@@ -29,7 +29,7 @@ export function ProgrammeProvider({ children }) {
   const programmeCollection = collection(db, "programmes");
 
   // ==========================
-  // Load all programmes
+  // Load all programmes 
   // ==========================
 
   const getProgrammes = async () => {
