@@ -29,6 +29,27 @@ const handleChange = (e) => {
     [name]: value,
   }));
 };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  await addProgramme(formData);
+
+  setFormData({
+    name: "",
+    code: "",
+    faculty: "",
+    level: "Undergraduate",
+    duration: "",
+    intake: "",
+    mode: "Full Time",
+    description: "",
+    requirements: "",
+    status: "Open",
+  });
+
+  setShowModal(false);
+};
   return (
     <AdminLayout>
       {/* Header */}
