@@ -12,6 +12,7 @@ const [formData, setFormData] = useState({
   name: "",
   code: "",
   faculty: "",
+  facultySlug: "",
   level: "Undergraduate",
   duration: "",
   intake: "",
@@ -21,6 +22,33 @@ const [formData, setFormData] = useState({
   status: "Open",
 });
 
+//faculties array
+const faculties = [
+  {
+    name: "Faculty of Engineering",
+    slug: "engineering",
+  },
+  {
+    name: "Faculty of Computing",
+    slug: "computing",
+  },
+  {
+    name: "Faculty of Business",
+    slug: "business",
+  },
+  {
+    name: "Faculty of Health Sciences",
+    slug: "health-sciences",
+  },
+  {
+    name: "Faculty of Law",
+    slug: "law",
+  },
+  {
+    name: "Faculty of Arts & Humanities",
+    slug: "arts-humanities",
+  },
+];
 const handleChange = (e) => {
   const { name, value } = e.target;
 
