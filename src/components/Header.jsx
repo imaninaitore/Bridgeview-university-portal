@@ -1,5 +1,6 @@
 import React from 'react'
 import backgroundImage from "@/assets/bridgeview.jpg"
+import { Link } from 'react-router'
 
 function Header() {
   return ( 
@@ -13,12 +14,15 @@ function Header() {
 
 
 <div className='absolute bottom-8 left-8'>
-    <button className=" group flex items-center gap-2 px-8 py-3 rounded-xl bg-white/15 backdrop-blur-lg border border-white/30 text-white font-medium shadow-lg hover:bg-white/25 transition-all duration-300">
+  <Link to={'/programmes'}>
+  <button className=" group flex items-center gap-2 px-8 py-3 rounded-xl bg-white/15 backdrop-blur-lg border border-white/30 text-white font-medium shadow-lg hover:bg-white/25 transition-all duration-300">
         Explore Programmes
      <span className="group-hover:translate-x-1 transition-transform duration-300">
     →
   </span>
 </button> 
+  </Link>
+    
 </div>
     </header>
    

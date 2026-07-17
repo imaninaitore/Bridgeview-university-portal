@@ -33,7 +33,6 @@ function App() {
             <Header />
             <About />
             <Faculties/>
-            <Programmes/>
             <Footer />
           </>
         }/>
@@ -44,6 +43,7 @@ function App() {
        <Route path="/register-postgraduate" element={<RegisterPostgraduate/>} /> 
        <Route path="/register-doctrate" element={<RegisterDoctrate/>} /> 
        <Route path="/login" element={<Login/>} /> 
+       <Route path="/programmes" element={<Programmes/>} /> 
         </Route>
 
       {/* Admin Routes */}
