@@ -10,9 +10,7 @@ import {
   LogOut,
 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
-
-// Replace this with your logo later
-// import logo from "@/assets/logo.png";
+ import logo from "@/assets/logo.png";
 
 const AdminSidebar = () => {
   const { currentUser, logout } = useAuth();
@@ -76,11 +74,13 @@ const AdminSidebar = () => {
 
         <div className="flex flex-col items-center py-8 border-b border-yellow-500/30">
 
-          {/* Replace this with your logo */}
+          <div >
 
-          <div className="w-24 h-24 rounded-full bg-slate-600 flex items-center justify-center">
-
-            LOGO
+             <img
+                 src={logo}
+                 alt="Bridgeview logo" 
+                 className="w-27 h-25 rounded-full flex items-center justify-center"
+                 />
 
           </div>
 
