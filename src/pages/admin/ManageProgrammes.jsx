@@ -4,12 +4,22 @@ import { Plus, Pencil, Trash2, Search } from "lucide-react";
 import { useProgrammes } from "@/context/ProgrammeContext";
 
 const ManageProgrammes = () => {
-  const {
-    programmes,
-    deleteProgramme,
-  } = useProgrammes();
-
+  
   const [showModal, setShowModal] = useState(false);
+  const { programmes, addProgramme, deleteProgramme } = useProgrammes();
+
+const [formData, setFormData] = useState({
+  name: "",
+  code: "",
+  faculty: "",
+  level: "Undergraduate",
+  duration: "",
+  intake: "",
+  mode: "Full Time",
+  description: "",
+  requirements: "",
+  status: "Open",
+});
 
   return (
     <AdminLayout>
