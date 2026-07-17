@@ -234,140 +234,144 @@ const handleSubmit = async (e) => {
 
       {showModal && (
 
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
 
-          <div className="bg-white rounded-2xl p-8 w-full max-w-2xl">
+          <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl p-8">
 
             <h2 className="text-2xl font-bold mb-6">
 
               Add Programme
 
             </h2>
+{/* the form */}
+  <div className="w-full">
 
-            {/* FORM COMES HERE */}
-            <form
-  onSubmit={handleSubmit}
-  className="space-y-4"
->
+    <form onSubmit={handleSubmit} className="space-y-6">
 
-  <input
-    type="text"
-    name="name"
-    placeholder="Programme Name"
-    value={formData.name}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3"
-    required
-  />
+      <input
+        type="text"
+        name="name"
+        placeholder="Programme Name"
+        value={formData.name}
+        onChange={handleChange}
+        className="w-full border rounded-lg p-3"
+        required
+      />
 
-  <input
-    type="text"
-    name="code"
-    placeholder="Programme Code"
-    value={formData.code}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3"
-  />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          type="text"
+          name="code"
+          placeholder="Programme Code"
+          value={formData.code}
+          onChange={handleChange}
+          className="w-full border rounded-lg p-3"
+        />
 
-  <input
-    type="text"
-    name="faculty"
-    placeholder="Faculty"
-    value={formData.faculty}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3"
-    required
-  />
+        <input
+          type="text"
+          name="faculty"
+          placeholder="Faculty"
+          value={formData.faculty}
+          onChange={handleChange}
+          className="w-full border rounded-lg p-3"
+          required
+        />
+      </div>
 
-  <select
-    name="level"
-    value={formData.level}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3"
-  >
-    <option>Undergraduate</option>
-    <option>Postgraduate</option>
-    <option>Doctorate</option>
-  </select>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <select
+          name="level"
+          value={formData.level}
+          onChange={handleChange}
+          className="w-full border rounded-lg p-3"
+        >
+          <option>Undergraduate</option>
+          <option>Postgraduate</option>
+          <option>Doctorate</option>
+        </select>
 
-  <input
-    type="text"
-    name="duration"
-    placeholder="Duration (e.g. 4 Years)"
-    value={formData.duration}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3"
-  />
+        <input
+          type="text"
+          name="duration"
+          placeholder="Duration (e.g. 4 Years)"
+          value={formData.duration}
+          onChange={handleChange}
+          className="w-full border rounded-lg p-3"
+        />
+      </div>
 
-  <input
-    type="text"
-    name="intake"
-    placeholder="Intake"
-    value={formData.intake}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3"
-  />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          type="text"
+          name="intake"
+          placeholder="Intake"
+          value={formData.intake}
+          onChange={handleChange}
+          className="w-full border rounded-lg p-3"
+        />
 
-  <select
-    name="mode"
-    value={formData.mode}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3"
-  >
-    <option>Full Time</option>
-    <option>Part Time</option>
-    <option>Online</option>
-  </select>
+        <select
+          name="mode"
+          value={formData.mode}
+          onChange={handleChange}
+          className="w-full border rounded-lg p-3"
+        >
+          <option>Full Time</option>
+          <option>Part Time</option>
+          <option>Online</option>
+        </select>
+      </div>
 
-  <textarea
-    name="description"
-    placeholder="Programme Description"
-    value={formData.description}
-    onChange={handleChange}
-    rows={4}
-    className="w-full border rounded-lg p-3"
-  />
+      <textarea
+        name="description"
+        placeholder="Programme Description"
+        value={formData.description}
+        onChange={handleChange}
+        rows={4}
+        className="w-full border rounded-lg p-3"
+      />
 
-  <textarea
-    name="requirements"
-    placeholder="Admission Requirements"
-    value={formData.requirements}
-    onChange={handleChange}
-    rows={4}
-    className="w-full border rounded-lg p-3"
-  />
+      <textarea
+        name="requirements"
+        placeholder="Admission Requirements"
+        value={formData.requirements}
+        onChange={handleChange}
+        rows={4}
+        className="w-full border rounded-lg p-3"
+      />
 
-  <select
-    name="status"
-    value={formData.status}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3"
-  >
-    <option>Open</option>
-    <option>Closed</option>
-  </select>
+      <select
+        name="status"
+        value={formData.status}
+        onChange={handleChange}
+        className="w-full border rounded-lg p-3"
+      >
+        <option>Open</option>
+        <option>Closed</option>
+      </select>
 
-  <div className="flex justify-end gap-4">
+      <div className="flex justify-end gap-4">
+        <button
+          type="button"
+          onClick={() => setShowModal(false)}
+          className="px-5 py-3 rounded-lg bg-gray-200 hover:bg-gray-300"
+        >
+          Cancel
+        </button>
 
-    <button
-      type="button"
-      onClick={() => setShowModal(false)}
-      className="px-5 py-3 rounded-lg bg-gray-200"
-    >
-      Cancel
-    </button>
+        <button
+          type="submit"
+          className="px-5 py-3 rounded-lg bg-[#D4AF37] text-[#0A2342] font-semibold hover:bg-[#c49d2f]"
+        >
+          Save Programme
+        </button>
+      </div>
 
-    <button
-      type="submit"
-      className="px-5 py-3 rounded-lg bg-[#D4AF37] font-semibold text-[#0A2342]"
-    >
-      Save Programme
-    </button>
+    </form>
 
   </div>
-
-</form>
-
+</div>
             <button
               onClick={() => setShowModal(false)}
               className="mt-6 bg-gray-200 px-5 py-2 rounded-lg"
@@ -378,8 +382,6 @@ const handleSubmit = async (e) => {
             </button>
 
           </div>
-
-        </div>
 
       )}
 
