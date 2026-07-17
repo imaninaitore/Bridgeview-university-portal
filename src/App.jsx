@@ -23,7 +23,7 @@ import Applications from "./pages/admin/Applications";
 import Programmes from './components/Programmes'
 import FacultyProgrammes from './pages/FacaultyProgrammes'
 import ApplicantDashboard from './pages/ApplicantsDashboard'
-
+import ProgrammeDetails from './pages/ProgrammeDetails'
 function App() {
   const {isAdmin, userLoggedIn} = useAuth();
   return (
@@ -39,14 +39,15 @@ function App() {
           </>
         }/>
 
-        <Route element={<MainLayout/>}>
+       <Route element={<MainLayout/>}>
        <Route path="/StudyLevel" element={<StudyLevel />} /> 
        <Route path="/register-undergraduate" element={<RegisterUndergraduate/>} /> 
        <Route path="/register-postgraduate" element={<RegisterPostgraduate/>} /> 
        <Route path="/register-doctrate" element={<RegisterDoctrate/>} /> 
        <Route path="/login" element={<Login/>} /> 
        <Route path="/programmes" element={<Programmes/>} /> 
-       <Route path="/faculties/:faculty" element={<FacultyProgrammes/>} /> 
+       <Route path="/faculties/:faculty" element={<FacultyProgrammes />} /> 
+       <Route path="/programmeDetails" element={<ProgrammeDetails />} /> 
         </Route>
 
       {/* Admin Routes */}

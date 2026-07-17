@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import { useProgrammes } from '@/context/ProgrammeContext'
+import { Link } from 'react-router';
 
 function FacultyProgrammes() {
   const { faculty } = useParams();
@@ -77,11 +78,10 @@ function FacultyProgrammes() {
 
               </div>
 
-              <button
-                className="mt-6 w-full bg-[#0A2342] text-white py-3 rounded-xl hover:bg-[#12355B]"
-              >
+             <Link to={'/programmeDetails'}><button
+                className="mt-6 w-full bg-[#0A2342] text-white py-3 rounded-xl hover:bg-[#12355B]">
                 View Details
-              </button>
+              </button></Link> 
 
             </div>
 
