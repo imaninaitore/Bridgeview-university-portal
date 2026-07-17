@@ -1,6 +1,5 @@
 import AdminLayout from "@/components/admin/AdminLayout";
 import DashboardCard from "@/components/admin/DashboardCard";
-import { Link } from "react-router";
 import {
   GraduationCap,
   FileText,

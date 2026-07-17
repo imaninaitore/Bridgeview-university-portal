@@ -20,6 +20,7 @@ import ManageHome from "./pages/admin/ManageHome";
 import ManageAnnouncements from "./pages/admin/ManageAnnouncements";
 import ManageContact from "./pages/admin/ManageContact";
 import Applications from "./pages/admin/Applications";
+import Programmes from './components/Programmes'
 
 function App() {
   const {isAdmin} = useAuth();
@@ -32,6 +33,7 @@ function App() {
             <Header />
             <About />
             <Faculties/>
+            <Programmes/>
             <Footer />
           </>
         }/>
