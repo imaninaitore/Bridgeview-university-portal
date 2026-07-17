@@ -1,6 +1,6 @@
 import AdminLayout from "@/components/admin/AdminLayout";
 import DashboardCard from "@/components/admin/DashboardCard";
-
+import { Link } from "react-router";
 import {
   GraduationCap,
   FileText,
@@ -17,7 +17,7 @@ const Dashboard = () => {
       <div className="bg-gradient-to-r from-[#0A2342] to-[#12355B] rounded-3xl p-8 text-white mb-8">
 
         <h1 className="text-4xl font-bold">
-          Welcome Back 👋
+          Welcome Back Admin!
         </h1>
 
         <p className="mt-2 text-slate-200">
