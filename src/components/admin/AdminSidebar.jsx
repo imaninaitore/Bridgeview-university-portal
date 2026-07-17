@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import logo from "@/assets/logo.png";
+import { Link } from "react-router";
 
 const AdminSidebar = () => {
   const { currentUser, logout } = useAuth();
@@ -161,6 +162,8 @@ const AdminSidebar = () => {
             </p>
 
           </div>
+
+<Link to={'/'}><button>Home</button></Link>
 
         </div>
 
