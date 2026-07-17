@@ -65,11 +65,14 @@ function Faculties() {
         </div>
 
         {/* Faculty Cards */}
-        <Link to={`/faculties/${faculty.slug}`}>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
           {faculties.map((faculty, index) => (
+
+          <Link to={`/faculties/${faculty.slug}`}>  
             <div
+
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
             >
@@ -92,11 +95,14 @@ function Faculties() {
                   Learn More →
                 </button>
               </div>
-            </div>
-          ))}
+              
+            </div> 
+          </Link>
 
+          ))}
+      
         </div>
-     </Link>
+     
       </div>
     </section>
   );

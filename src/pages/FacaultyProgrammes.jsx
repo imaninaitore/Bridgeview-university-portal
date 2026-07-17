@@ -15,9 +15,7 @@ function FacultyProgrammes() {
   }
 
    const filteredProgrammes = programmes.filter(
-    (programme) =>
-      programme.faculty.toLowerCase() ===
-      decodeURIComponent(faculty).toLowerCase()
+    (programme) =>programme.facultySlug === faculty
   );
   return (
     <div className="max-w-7xl mx-auto py-16 px-6">
