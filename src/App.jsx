@@ -21,6 +21,7 @@ import ManageAnnouncements from "./pages/admin/ManageAnnouncements";
 import ManageContact from "./pages/admin/ManageContact";
 import Applications from "./pages/admin/Applications";
 import Programmes from './components/Programmes'
+import FacultyProgrammes from './pages/FacaultyProgrammes'
 
 function App() {
   const {isAdmin} = useAuth();
@@ -44,6 +45,7 @@ function App() {
        <Route path="/register-doctrate" element={<RegisterDoctrate/>} /> 
        <Route path="/login" element={<Login/>} /> 
        <Route path="/programmes" element={<Programmes/>} /> 
+       <Route path="/faculties/:faculty" element={<FacultyProgrammes/>} /> 
         </Route>
 
       {/* Admin Routes */}
