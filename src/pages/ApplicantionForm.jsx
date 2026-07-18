@@ -425,8 +425,8 @@ const { currentUser } = useAuth();
           <div className="text-center">
 
             <button
-              className="bg-[#D4AF37] hover:bg-yellow-500 text-[#0A2342] font-bold px-12 py-4 rounded-xl transition"
-            >
+            type="submit"
+              className="bg-[#D4AF37] hover:bg-yellow-500 text-[#0A2342] font-bold px-12 py-4 rounded-xl transition" >
               Submit Application
             </button>
 
