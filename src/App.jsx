@@ -101,6 +101,16 @@ function App() {
       isAdmin ? <Applications /> : <Navigate to="/login" replace />
     }
   />
+
+  <Route
+  path="/admin/applications"
+  element={
+    userLoggedIn && currentUser?.role === "admin" ? (
+      <ManageApplications />
+    ) : (
+      <Navigate to="/" />
+    )
+  }/>
    
   {/*registered applicant page for form and dashboard*/}
   <Route path="/dashboard/application/:programmeId" element={
