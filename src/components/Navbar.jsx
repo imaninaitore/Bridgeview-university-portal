@@ -31,15 +31,15 @@ const Navbar = () => {
 
           <div className="flex items-center gap-8 text-sm ">
 
-            <Link to={'/login'} className="hover:text-amber-400 transition"> Applicant Portal</Link>
+            <Link to={'/login'} className="hover:text-amber-400 transition"> | Applicant Portal</Link>
 
-            <a href="#" className="hover:text-amber-400 transition"> | Students </a>
+            {/* <a href="#" className="hover:text-amber-400 transition"> | Students </a>
 
             <a href="#" className="hover:text-amber-400 transition">| Faculty</a>
 
             <a href="#" className="hover:text-amber-400 transition">| Alumni </a>
 
-            <a href="#" className="hover:text-amber-400 transition"> | Parents </a>
+            <a href="#" className="hover:text-amber-400 transition"> | Parents </a> */}
 
           </div>
 
@@ -80,27 +80,27 @@ const Navbar = () => {
             <ul className="flex items-center gap-10 text-gray-700 font-medium">
 
               <li>
-                <a href="#" className="hover:text-amber-500 transition">
+                <Link to={'/'} className="hover:text-amber-500 transition">
                   Home
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="hover:text-amber-500 transition">
+                <Link to={'/About'} className="hover:text-amber-500 transition">
                   About
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="hover:text-amber-500 transition">
+                <Link to={'/faculties'} className="hover:text-amber-500 transition">
                   Faculties &  Programs
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="hover:text-amber-500 transition">
+                <Link to={'/admissions'} className="hover:text-amber-500 transition">
                   Admissions
-                </a>
+                </Link>
               </li>
 
               <li>
