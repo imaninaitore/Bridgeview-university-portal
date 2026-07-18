@@ -53,6 +53,15 @@ function App() {
        <Route path="/programmes" element={<Programmes/>} /> 
        <Route path="/faculties/:faculty" element={<FacultyProgrammes />} /> 
        <Route path="/programmes/:programmeId" element={<ProgrammeDetails />} /> 
+        <Route
+  path="/dashboard"
+  element={
+    userLoggedIn ? (
+      <ApplicantDashboard />
+    ) : (
+      <Navigate to="/login" />
+    )
+  }/>
         </Route>
 
       {/* Admin Routes */}
@@ -126,16 +135,6 @@ function App() {
   <Route path="/dashboard/application/:programmeId" element={
     userLoggedIn ? (
       <ApplicationForm />
-    ) : (
-      <Navigate to="/login" />
-    )
-  }/>
-
-  <Route
-  path="/dashboard"
-  element={
-    userLoggedIn ? (
-      <ApplicantDashboard />
     ) : (
       <Navigate to="/login" />
     )
