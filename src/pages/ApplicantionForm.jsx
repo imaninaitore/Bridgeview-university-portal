@@ -167,6 +167,7 @@ const { currentUser } = useAuth();
               <input
                 name="firstName"
                 placeholder="First Name"
+                value={formData.firstName}
                 onChange={handleChange}
                 className="border rounded-xl p-4 focus:border-yellow-500 outline-none"
               />
@@ -174,6 +175,7 @@ const { currentUser } = useAuth();
               <input
                 name="lastName"
                 placeholder="Last Name"
+                value={formData.lastName}
                 onChange={handleChange}
                 className="border rounded-xl p-4 focus:border-yellow-500 outline-none"
               />
@@ -181,12 +183,14 @@ const { currentUser } = useAuth();
               <input
                 type="date"
                 name="dob"
+                value={formData.dob}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
 
               <select
                 name="gender"
+                value={formData.gender}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               >
@@ -198,6 +202,7 @@ const { currentUser } = useAuth();
               <input
                 name="nationality"
                 placeholder="Nationality"
+                value={formData.nationality}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -205,6 +210,7 @@ const { currentUser } = useAuth();
               <input
                 name="nationalId"
                 placeholder="National ID / Passport"
+                value={formData.nationalId}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -237,6 +243,7 @@ const { currentUser } = useAuth();
               <input
                 name="phone"
                 placeholder="Phone Number"
+                value={formData.phone}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -244,6 +251,7 @@ const { currentUser } = useAuth();
               <input
                 name="county"
                 placeholder="County"
+                value={formData.country}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -251,6 +259,7 @@ const { currentUser } = useAuth();
               <input
                 name="address"
                 placeholder="Postal Address"
+                value={formData.address}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -278,6 +287,7 @@ const { currentUser } = useAuth();
               <input
                 name="highSchool"
                 placeholder="High School"
+                value={formData.highSchool}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -285,6 +295,7 @@ const { currentUser } = useAuth();
               <input
                 name="kcseIndex"
                 placeholder="KCSE Index Number"
+                value={formData.kcseIndex}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -292,6 +303,7 @@ const { currentUser } = useAuth();
               <input
                 name="meanGrade"
                 placeholder="KCSE Mean Grade"
+                value={formData.meanGrade}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -299,6 +311,7 @@ const { currentUser } = useAuth();
               <input
                 name="yearCompleted"
                 placeholder="Year Completed"
+                value={formData.yearCompleted}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -326,6 +339,7 @@ const { currentUser } = useAuth();
               <input
                 name="guardianName"
                 placeholder="Guardian Name"
+                value={formData.guardianName}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -333,6 +347,7 @@ const { currentUser } = useAuth();
               <input
                 name="relationship"
                 placeholder="Relationship"
+                value={formData.relationship}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -340,6 +355,7 @@ const { currentUser } = useAuth();
               <input
                 name="guardianPhone"
                 placeholder="Guardian Phone"
+                value={formData.guardianPhone}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -367,18 +383,21 @@ const { currentUser } = useAuth();
               <input
                 type="file"
                 name="passportPhoto"
+                value={formData.passpportPhoto}
                 onChange={handleChange}
               />
 
               <input
                 type="file"
                 name="kcseCertificate"
+                value={formData.kcseCertificate}
                 onChange={handleChange}
               />
 
               <input
                 type="file"
                 name="nationalIdFile"
+                value={formData.nationalIdFile}
                 onChange={handleChange}
               />
 
@@ -405,6 +424,7 @@ const { currentUser } = useAuth();
               <input
                 type="checkbox"
                 name="declaration"
+                value={formData.declaration}
                 onChange={handleChange}
               />
 
