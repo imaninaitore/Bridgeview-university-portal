@@ -146,6 +146,8 @@ export const ApplicationProvider = ({ children }) => {
 
         getMyApplication,
 
+        getAllApplications,
+
       }}
 
     >
