@@ -111,8 +111,6 @@ const Navbar = () => {
 
             </ul>
 
-            
-
 {userLoggedIn ? (
   <div className="flex items-center gap-4">
 
@@ -130,6 +128,15 @@ const Navbar = () => {
 
     </div>
 
+{userLoggedIn && (
+  <Link
+    to="/dashboard"
+    className="bg-[#D4AF37] hover:bg-yellow-500 text-[#0A2342] font-semibold px-5 py-2 rounded-lg transition"
+  >
+    Dashboard
+  </Link>
+)}
+
     {isAdmin && (
       <Link
         to="/admin"
@@ -141,8 +148,7 @@ const Navbar = () => {
 
     <button
       onClick={handleLogout}
-      className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
-    >
+      className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
       Logout
     </button>
 
@@ -150,11 +156,11 @@ const Navbar = () => {
 ) : (
   <Link
     to="/StudyLevel"
-    className="bg-[#D4AF37] text-[#0B1F3A] px-5 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition"
-  >
+    className="bg-[#D4AF37] text-[#0B1F3A] px-5 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
     Apply →
   </Link>
 )}   
+
         </div>
         </div>
 
