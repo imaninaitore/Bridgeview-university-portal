@@ -86,7 +86,7 @@ const Navbar = () => {
               </li>
 
               <li>
-                <Link to={'/About'} className="hover:text-amber-500 transition">
+                <Link to={'/about'} className="hover:text-amber-500 transition">
                   About
                 </Link>
               </li>
