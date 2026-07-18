@@ -28,6 +28,7 @@ import ApplicationForm from './pages/ApplicantionForm'
 import { useApplications } from './context/ApplicationContext'
 import ViewApplication from './pages/admin/ViewAplication'
 import Admissions from './pages/Admissions'
+import Contact from './pages/Contact'
 
 function App() {
   const {isAdmin, userLoggedIn,currentUser} = useAuth();
@@ -56,7 +57,8 @@ function App() {
        <Route path="/programmes/:programmeId" element={<ProgrammeDetails />} /> 
        <Route path="/admissions" element={<Admissions/>} /> 
        <Route path="/about" element={<About/>} /> 
-       <Route path="faculties" element={<Faculties/>} /> 
+       <Route path="/faculties" element={<Faculties/>} /> 
+       <Route path="/contact" element={<Contact/>} /> 
         <Route
   path="/dashboard"
   element={

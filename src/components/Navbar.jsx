@@ -104,9 +104,9 @@ const Navbar = () => {
               </li>
 
               <li>
-                <a href="#" className="hover:text-amber-500 transition">
+                <Link to={'/contact'} className="hover:text-amber-500 transition">
                   Contact
-                </a>
+                </Link>
               </li>
 
             </ul>
