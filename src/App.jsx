@@ -56,6 +56,7 @@ function App() {
        <Route path="/programmes/:programmeId" element={<ProgrammeDetails />} /> 
        <Route path="/admissions" element={<Admissions/>} /> 
        <Route path="/about" element={<About/>} /> 
+       <Route path="faculties" element={<Faculties/>} /> 
         <Route
   path="/dashboard"
   element={
