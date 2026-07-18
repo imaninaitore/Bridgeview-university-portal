@@ -37,21 +37,23 @@ const ViewApplication = () => {
 
   };
 
-  const handleStatus = async (status) => {
+const handleStatus = async (status) => {
+  try {
 
-    await updateApplicationStatus(
-
-      application.id,
-
-      status
-
-    );
+    await updateApplicationStatus(application.id, status);
 
     alert(`Application ${status}`);
 
-    navigate("/admin/applications");
+    navigate("/admin/ManageApplications");
 
-  };
+  } catch (error) {
+
+    console.error(error);
+
+    alert("Failed to update application");
+
+  }
+};
 
   if (loading) {
 
