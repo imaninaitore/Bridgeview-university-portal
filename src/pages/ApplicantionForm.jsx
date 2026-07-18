@@ -230,10 +230,8 @@ const { currentUser } = useAuth();
             <div className="grid md:grid-cols-2 gap-6">
 
               <input
-                name="email"
-                placeholder="Email Address"
-                onChange={handleChange}
-                className="border rounded-xl p-4"
+                value={currentUser?.email || ""}
+                className="border rounded-xl p-4 bg-slate-100"
               />
 
               <input
