@@ -56,51 +56,51 @@ export const ApplicationProvider = ({ children }) => {
 
   const getMyApplication = async (userId) => {
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
+  try {
 
-      const applicationsRef = collection(db, "applications");
+    const applicationsRef = collection(db, "applications");
 
-      const q = query(
+    const q = query(
+      applicationsRef,
+      where("applicantId", "==", userId)
+    );
 
-        applicationsRef,
+    const snapshot = await getDocs(q);
 
-        where("applicantId", "==", userId)
+    if (!snapshot.empty) {
 
-      );
+      const applicationData = {
+        id: snapshot.docs[0].id,
+        ...snapshot.docs[0].data(),
+      };
 
-      const snapshot = await getDocs(q);
+      setApplication(applicationData);
 
-      if (!snapshot.empty) {
+      return applicationData;
 
-        const doc = snapshot.docs[0];
+    } else {
 
-        setApplication({
+      setApplication(null);
 
-          id: doc.id,
-
-          ...doc.data(),
-
-        });
-
-      } else {
-
-        setApplication(null);
-
-      }
-
-    } catch (error) {
-
-      console.error(error);
-
-    } finally {
-
-      setLoading(false);
+      return null;
 
     }
 
-  };
+  } catch (error) {
+
+    console.error(error);
+
+    return null;
+
+  } finally {
+
+    setLoading(false);
+
+  }
+
+};
 
   const getAllApplications = async () => {
 
