@@ -12,8 +12,11 @@ import {
   FileText,
   ShieldCheck,
 } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const ApplicationForm = () => {
+
+ const navigate = useNavigate(); 
   const { programmeId } = useParams();
   const { programmes } = useProgrammes();
 const { submitApplication } = useApplications();
@@ -159,19 +162,19 @@ const { currentUser } = useAuth();
 
               <input
                 readOnly
-                value={programme.name}
+                value={programme?.name || ""}
                 className="border rounded-xl p-4 bg-slate-100"
               />
 
               <input
                 readOnly
-                value={programme.faculty}
+                value={programme?.faculty || ""}
                 className="border rounded-xl p-4 bg-slate-100"
               />
 
               <input
                 readOnly
-                value={programme.level}
+                value={programme?.level || ""}
                 className="border rounded-xl p-4 bg-slate-100"
               />
 
@@ -268,6 +271,7 @@ const { currentUser } = useAuth();
 
               <input
                 value={currentUser?.email || ""}
+                readOnly
                 className="border rounded-xl p-4 bg-slate-100"
               />
 
@@ -282,7 +286,7 @@ const { currentUser } = useAuth();
               <input
                 name="county"
                 placeholder="County"
-                value={formData.country}
+                value={formData.county}
                 onChange={handleChange}
                 className="border rounded-xl p-4"
               />
@@ -414,21 +418,18 @@ const { currentUser } = useAuth();
               <input
                 type="file"
                 name="passportPhoto"
-                value={formData.passpportPhoto}
                 onChange={handleChange}
               />
 
               <input
                 type="file"
                 name="kcseCertificate"
-                value={formData.kcseCertificate}
                 onChange={handleChange}
               />
 
               <input
                 type="file"
                 name="nationalIdFile"
-                value={formData.nationalIdFile}
                 onChange={handleChange}
               />
 
