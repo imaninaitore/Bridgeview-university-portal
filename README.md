@@ -8,7 +8,7 @@ Bridgeview University Admissions & Student Portal is a modern web application th
 
 # problem statement
 Applicants need an easy way to apply for university programmes and monitor their application progress, while administrators require a centralized system to efficiently review and process applications.
- NOT A claim to solve a problem that has already been solved elsewhere. Instead, this demonstrates how the application addresses common challenges by providing a streamlined admissions and application workflow.
+ NOT A claim to solve a problem that has already been solved elsewhere. Instead, this demonstrates how the application addresses common challenge of confusing and doubtful applications by providing a streamlined admissions and application workflow.
 
 
 ##  Features Built
