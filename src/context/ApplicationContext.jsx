@@ -1,11 +1,14 @@
+//here i have centralized all application data
+
 import React, {
   createContext,
   useContext,
   useState,
-} from "react";
+} from "react";//basic react hooks
 
-import { db } from "@/firebase/firebase";
+import { db } from "@/firebase/firebase"; //saying im using the firebase database
 
+//firebase functions
 import {
   collection,
   addDoc,
@@ -18,7 +21,9 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
-const ApplicationContext = createContext();
+const ApplicationContext = createContext(); //empty global storage
+
+//i start with the hooks
 
 export const useApplications = () => {
   return useContext(ApplicationContext);
@@ -26,7 +31,7 @@ export const useApplications = () => {
 
 export const ApplicationProvider = ({ children }) => {
 
-  const [application, setApplication] = useState(null);
+  const [application, setApplication] = useState(null);//stores
 
   const [loading, setLoading] = useState(false);
 
@@ -58,12 +63,13 @@ export const ApplicationProvider = ({ children }) => {
 
     const applicationsRef = collection(db, "applications");
 
+//create the find, where = query
     const q = query(
       applicationsRef,
       where("applicantId", "==", userId)
     );
 
-    const snapshot = await getDocs(q);
+    const snapshot = await getDocs(q); //runs query
 
     if (!snapshot.empty) {
 
@@ -72,7 +78,7 @@ export const ApplicationProvider = ({ children }) => {
         ...snapshot.docs[0].data(),
       };
 
-      setApplication(applicationData);
+      setApplication(applicationData); //stores globally
 
       return applicationData;
 
@@ -150,9 +156,11 @@ const getApplicationById = async (applicationId) => {
   }
 };
 
+//used in accept or reject
+
 const updateApplicationStatus = async (applicationId, status, rejectionReason ="") => {
   try {
-    const applicationRef = doc(
+    const applicationRef = doc( //locate document
       db,
       "applications",
       applicationId
@@ -175,7 +183,7 @@ const updateApplicationStatus = async (applicationId, status, rejectionReason ="
 
 };
   return (
-
+// the provider = to share everything
     <ApplicationContext.Provider
 
       value={{

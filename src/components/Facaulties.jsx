@@ -7,6 +7,7 @@ import facaulty5 from '@/assets/facaultyImages/law.jpg'
 import facaulty6 from '@/assets/facaultyImages/arts.jpg'
 import { Link } from "react-router";
 
+//array of objects
 const faculties = [
   {
     name: "Faculty of Engineering",

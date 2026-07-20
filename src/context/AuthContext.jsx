@@ -1,6 +1,9 @@
+//the heart of my authentication system
+
 import React, { useContext,useEffect, useState } from "react";
 import {auth} from "@/firebase/firebase" //my authentication assistant
 
+//firebase authentication functions
 import { 
     onAuthStateChanged,
     createUserWithEmailAndPassword,
@@ -10,17 +13,19 @@ import {
 
  const ADMIN_EMAIL = "anna.imaninaitore1726@gmail.com";
 
-const AuthContext = React.createContext();
+const AuthContext = React.createContext();//empty authentication storage /empty office
 
 export function useAuth(){
     return useContext(AuthContext);
 }
+
 
 export function AuthProvider({children}) {
     const[currentUser,setCurrentUser] = useState(null);
     const[userLoggedIn,setUserLoggedIn] = useState(false);
     const[loading,setLoading] = useState(true);
     const isAdmin = currentUser?.email === ADMIN_EMAIL;
+    
 useEffect(() =>{
     const unsubscribe = onAuthStateChanged(auth, initializeUser);
     return unsubscribe;
@@ -60,6 +65,7 @@ const value = {
     logout,
 };
 
+//says share everything
 return(
     <AuthContext.Provider value={value}>
         {!loading && children}
